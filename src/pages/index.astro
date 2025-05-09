@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+// Import all images
+import img1 from '@/assets/images/img-1.jpg';
+import img2 from '@/assets/images/img-2.jpg';
+import img3 from '@/assets/images/img-3.jpg';
+import img4 from '@/assets/images/img-4.jpg';
+import img5 from '@/assets/images/img-5.jpg';
+import img6 from '@/assets/images/img-6.jpg';
+import img7 from '@/assets/images/img-7.jpg';
+import img8 from '@/assets/images/img-8.jpg';
+import img9 from '@/assets/images/img-9.jpg';
+
+// Create an array of all images
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+---
+
+<BaseLayout>
+  <section class='team'>
+    <div class='profile-images'>
+      {
+        images.map((image, index) => (
+          <div class='img'>
+            <Image
+              src={image}
+              alt={`Team member ${index + 1}`}
+              width={300}
+              height={400}
+              class=''
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class='profile-names'>
+      <div class='name default'>
+        <h2>Meet the team</h2>
+      </div>
+      <div class='name'>
+        <h2>Arthur Dent</h2>
+      </div>
+      <div class='name'>
+        <h2>Ford Prefect</h2>
+      </div>
+      <div class='name'>
+        <h2>Zaphod Beeblebrox</h2>
+      </div>
+      <div class='name'>
+        <h2>Trillian</h2>
+      </div>
+      <div class='name'>
+        <h2>Marvin</h2>
+      </div>
+      <div class='name'>
+        <h2>Slartibartfast</h2>
+      </div>
+      <div class='name'>
+        <h2>Deep Thought</h2>
+      </div>
+      <div class='name'>
+        <h2>Eddie</h2>
+      </div>
+      <div class='name'>
+        <h2>Vogon</h2>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
